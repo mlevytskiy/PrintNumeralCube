@@ -24,10 +24,10 @@ public class PrintCubeUtils {
         }
     }
 
-    private static String getLine(Integer[] bigLine, int lineNumber, int maxValueInCube) {
+    private static String getLine(Integer[] biggestLine, int lineNumber, int maxValueInCube) {
         StringBuilder strBuilder = new StringBuilder();
-        for (int i = 0; i < bigLine.length; i++) {
-            int value = bigLine[i] - (maxValueInCube - lineNumber);
+        for (int i = 0; i < biggestLine.length; i++) {
+            int value = biggestLine[i] - (maxValueInCube - lineNumber);
             strBuilder.append( value > 0 ? value : " " );
         }
         return strBuilder.toString();
