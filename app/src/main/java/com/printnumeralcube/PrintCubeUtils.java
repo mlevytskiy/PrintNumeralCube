@@ -14,6 +14,8 @@ public class PrintCubeUtils {
         if (n <= 0) {
             throw new IllegalArgumentException("Incorrect n = " + n);
         }
+        println("Ввод: " + n);
+        println("Вывод:");
         StringBuilder strBuilder = new StringBuilder();
         Integer[] biggestLine = getBiggestLine(n);
         for (int i = 1; i < n; i++) {
