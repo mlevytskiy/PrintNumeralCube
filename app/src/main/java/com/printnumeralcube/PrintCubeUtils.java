@@ -3,6 +3,9 @@ package com.printnumeralcube;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Created by max on 16.06.16.
  */
@@ -18,12 +21,15 @@ public class PrintCubeUtils {
         println("Вывод:");
         StringBuilder strBuilder = new StringBuilder();
         Integer[] biggestLine = getBiggestLine(n);
+        Deque<String> deque = new ArrayDeque<>();
         for (int i = 1; i < n; i++) {
-            println( getLine(biggestLine, i, n, strBuilder) );
+            String line = getLine(biggestLine, i, n, strBuilder);
+            println(line);
+            deque.push(line);
         }
         println( TextUtils.join("", biggestLine) );
-        for (int i = n-1; i > 0; i--) {
-            println( getLine(biggestLine, i, n, strBuilder) );
+        for (String line : deque) {
+            println(line);
         }
     }
 
